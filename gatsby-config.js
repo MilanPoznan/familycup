@@ -1,28 +1,41 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "kafeterija",
+    title: `Family cup`,
+    description: `Family cup desc.`,
+    author: `MIlan Poznan`,
+    backendUrl: process.env.GATSBY_WP_URL || 'http://localhost:8888/kafeterija/',
   },
   plugins: [
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: `gatsby-source-wordpress`,
       options: {
-        url: "http://localhost:8888/kafeterija",
+        // the only required plugin option for WordPress is the GraphQL url.
+        url: `${process.env.GATSBY_WP_URL}/graphql`
       },
     },
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
-      __key: "images",
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg-images/
+        }
+      }
+    },
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`
+
   ],
 };
