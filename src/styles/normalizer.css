@@ -281,6 +281,10 @@ fieldset {
  *		`fieldset` elements in all browsers.
  */
 
+ div {
+	box-sizing: border-box; /* 1 */
+
+ }
 legend {
 	box-sizing: border-box; /* 1 */
 	color: inherit; /* 2 */

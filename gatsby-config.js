@@ -5,7 +5,7 @@ module.exports = {
     title: `Family cup`,
     description: `Family cup desc.`,
     author: `MIlan Poznan`,
-    backendUrl: process.env.GATSBY_WP_URL || 'http://localhost:8888/kafeterija/',
+    backendUrl: process.env.GATSBY_WP_URL || 'https://admin.familycup-kafeterija.rs/',
   },
   plugins: [
     {

@@ -10,12 +10,11 @@ export default function HomepageTemplate({ data }) {
 
   useEffect(() => {
     let isSerbian = language.slug === 'sr'
-    let getCurrLangMenu = () => isSerbian ? nodes[0].menuItems.nodes : nodes[1].menuItems.nodes
+    let getCurrLangMenu = () => isSerbian ? nodes[1].menuItems.nodes : nodes[0].menuItems.nodes
     setcurrLangMenu(getCurrLangMenu())
     console.log(currLangMenu)
   }, [])
 
-  console.log(currLangMenu)
   return (
     <div>
       <Layout>

@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   pages.nodes.forEach(page => {
     console.log(page.uri)
-    if (page.uri === '/' || page.uri === '/en/homepage') {
+    if (page.uri === '/' || page.uri === '/en/homepage/') {
       return createPage({
         path: page.uri,
         component: path.resolve('./src/templates/homepage-template.js'),
