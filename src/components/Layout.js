@@ -5,7 +5,7 @@ import WelcomeScreen from "./WelcomeScreen"
 
 //Styled compo
 import { ThemeProvider } from 'styled-components';
-import { theme } from './globalTheme'
+import { theme } from './GlobalTheme'
 import NavMenu from './NavMenu'
 
 import '../styles/normalizer.css'
