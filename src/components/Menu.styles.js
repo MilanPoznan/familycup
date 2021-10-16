@@ -11,6 +11,7 @@ export const MenuWrapper = styled.div`
 `
 
 export const MenuComponent = styled.div`
+padding-top: 60px;
 `
 
 export const MenuComponentTitle = styled.h2`
@@ -26,6 +27,7 @@ export const MenuItemWrapper = styled.div`
   flex-flow: column;
   margin-bottom: 40px;
   width: 100%;
+  box-shadow: -1px 9px 21px -5px rgba(0,0,0,0.75);
   .gatsby-image-wrapper {
     width: 100%;
     margin: 0 auto;
@@ -62,10 +64,11 @@ export const MenuPrice = styled.p`
 `
 
 export const MenuDesc = styled.div`
-  padding: 0 5%;
+  padding: 0 5% 14px;
   margin-top: 12px;
   font-size: 14px;
   text-align: center;
   line-height: 18px;
   letter-spacing: .3px;
+  font-family: 'Montserrat', sans-serif;
 `

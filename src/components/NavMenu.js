@@ -1,18 +1,30 @@
-import React from 'react'
-import { NavMenuWrapper } from './NavMenu.styles'
+import React, { useState } from 'react'
+import { NavMenuWrapper, NavigationMenuContainer, NavigationLogo, NavMenuContainer, HamburgerButton } from './NavMenu.styles'
 import logoSrc from '../images/familycup.png'
 
-export default function NavMenu({ menuItems }) {
+import { Link } from "gatsby"
+
+
+export default function NavMenu({ currLangMenu }) {
+  console.log(currLangMenu)
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <NavMenuWrapper>
-      <div>
-        <img src={logoSrc} alt="logo" />
-        <svg viewBox="0 0 100 80" width="40" height="40">
-          <rect width="80" height="14" rx="8"></rect>
-          <rect y="30" width="80" height="14" rx="8"></rect>
-          <rect y="60" width="80" height="14" rx="8"></rect>
-        </svg>
-      </div>
+      <NavMenuContainer>
+        <NavigationLogo src={logoSrc} alt="logo" />
+        <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </HamburgerButton>
+      </NavMenuContainer>
+      <NavigationMenuContainer isOpen={isOpen}>
+        {currLangMenu &&
+          currLangMenu.map((item, index) => <Link key={index} to={item.url}> {item.label}</Link>
+          )}
+        <img src={logoSrc} alt="kafeterija logo" />
+      </NavigationMenuContainer>
     </NavMenuWrapper>
   )
 }

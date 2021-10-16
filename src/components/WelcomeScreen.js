@@ -18,7 +18,7 @@ export default function WelcomeScreen({ currLangMenu, currLang }) {
     <WelcomeScreenContainer>
       <MenuItems>
         {currLangMenu.length !== 0 && currLangMenu.map((item, index) =>
-          <SingleMenuItem index={index} to={item.path.replace('http://', '')} onClick={(e) => handleMenuItemOnClick(e)}>
+          <SingleMenuItem key={index} index={index} to={item.url} onClick={(e) => handleMenuItemOnClick(e)}>
             {item.label}
           </SingleMenuItem>
         )}
