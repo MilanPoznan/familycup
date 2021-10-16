@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 
 export default function NavMenu({ currLangMenu }) {
-  console.log(currLangMenu)
+
   const [isOpen, setIsOpen] = useState(false)
 
   return (
