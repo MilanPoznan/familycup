@@ -10,11 +10,11 @@ import NavMenu from './NavMenu'
 
 import '../styles/normalizer.css'
 
-const Layout = ({ children, currLangMenu }) => {
+const Layout = ({ children, currLangMenu, hasHeader = true }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavMenu currLangMenu={currLangMenu} />
+      {hasHeader && <NavMenu currLangMenu={currLangMenu} />}
       <GlobalWrapper>
         {children}
       </GlobalWrapper>

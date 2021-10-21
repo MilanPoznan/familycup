@@ -9,7 +9,9 @@ export const theme = {
     secondaryLight: '#d2c1b0',
     secondaryDark: '#37251b',
     white: '#ffffff',
-    black: '#000'
+    black: '#000',
+    primaryGreen: '#134332'
+
   },
   fontSizes: {
     small: "1em",

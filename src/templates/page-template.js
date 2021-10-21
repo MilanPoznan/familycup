@@ -34,49 +34,17 @@ export default function Page({ data, location }) {
 
 
 export const menuPageQuery = graphql`query pageByID($id: String!) {
-   wpPage(id: {eq: $id}) {
-      id
-      language {
-        slug
-        name
-      }
-      flexibleContent {
-        pageContent {
-          ... on WpPage_Flexiblecontent_PageContent_Menu {
-            fieldGroupName
-            menuTitle
-            menuLink
-            menuItems {
-              description
-              image {
-                localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    layout: FULL_WIDTH
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                  )
-                }
-              }
-              }
-              price
-              title
-            }
-        }
-      }
+  wpPage(id: {eq: $id}) {
+    id
+    language {
+      slug
+      name
+    }
+    flexibleContent {
+      ...getFlexibleContent
     }
   }
   allWpMenu {
-    nodes {
-      locations
-      menuItems {
-        nodes {
-          label
-          path
-          title
-          url
-        }
-      }
-    }
+    ...getMenus
   }
 }`

@@ -111,4 +111,11 @@ export const NavigationMenuContainer = styled.div`
   ${({ isOpen }) => isOpen && css`
     left: 0;
   `}
+  @media (min-width: 768px) {
+    width: 30vw;
+    /* right: 100%; */
+    ${({ isOpen }) => isOpen && css`
+    left: 70vw;
+  `}
+  }
 `
