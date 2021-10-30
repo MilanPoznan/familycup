@@ -23,6 +23,17 @@ export const flexibleContentFragments = graphql`
       ... on WpPage_Flexiblecontent_PageContent_Menu {
             fieldGroupName
             menuTitle
+            previewIcon {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: FULL_WIDTH
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
             menuLink
             menuItems {
               description

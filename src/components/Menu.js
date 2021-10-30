@@ -12,12 +12,12 @@ export default function Menu({ menuData, title, id }) {
       <MenuComponentTitle>{title}</MenuComponentTitle>
       <MenuWrapper>
         {menuData.map((item, index) => {
-          const image = getImage(item.image.localFile.childImageSharp.gatsbyImageData)
+          const image = item.image ? getImage(item.image.localFile.childImageSharp.gatsbyImageData) : null
           return (<MenuItemWrapper key={index}>
-            <GatsbyImage image={image} alt="menu item" />
+            {image !== null ? <GatsbyImage image={image} alt="menu item" /> : null}
             <TitleWrapp>
               <MenuTitle>{item.title}</MenuTitle>
-              <MenuPrice>{item.price}RSD</MenuPrice>
+              <MenuPrice>{item.price}</MenuPrice>
             </TitleWrapp>
             <MenuDesc>
               {item.description}
