@@ -19,7 +19,6 @@ export default function HomepageTemplate({ data }) {
     let isSerbian = language.slug === 'sr'
     let getCurrLangMenu = () => isSerbian ? nodes[1].menuItems.nodes : nodes[0].menuItems.nodes
     setcurrLangMenu(getCurrLangMenu())
-    console.log(currLangMenu)
   }, [])
 
   return (
@@ -30,7 +29,7 @@ export default function HomepageTemplate({ data }) {
       <HomePgeWrapper>
         {pageContent.map((item, index) => {
           if (item.fieldGroupName === "Page_Flexiblecontent_PageContent_Menu") {
-            return <Menu key={index} menuData={item.menuItems} title={item.menuTitle} id={item.menuLink} />
+            return <Menu key={index} menuData={item.menuItems} title={item.menuTitle} menuLink={item.homeMenuLink} />
           } else if (item.fieldGroupName === 'Page_Flexiblecontent_PageContent_CaffeePlace') {
             return <SingleCaffeeLocal key={index} data={item} />
           }
@@ -48,7 +47,62 @@ export const homepageQuery = graphql`query homePage($id: String!) {
       slug
     }
     flexibleContent {
-      ...getFlexibleContent
+      pageContent {
+      ... on WpPage_Flexiblecontent_PageContent_Menu {
+            fieldGroupName
+            menuTitle
+            previewIcon {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: FULL_WIDTH
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
+            menuLink
+            menuItems {
+              description
+              image {
+                localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: FULL_WIDTH
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+              }
+              price
+              title
+            }
+        }
+        ... on WpPage_Flexiblecontent_PageContent_CaffeePlace {
+          title
+          description
+          homeMenuLink {
+            ... on WpPage {
+              id
+              uri
+            }
+          }
+          fieldGroupName
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FULL_WIDTH
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+          }
+        }
+    }
     }
   }
 

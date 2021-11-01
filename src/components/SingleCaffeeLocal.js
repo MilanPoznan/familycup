@@ -7,14 +7,13 @@ import { Link } from 'gatsby'
 import { SingleCaffeeWrapper, SingleOverlay } from './SingleCaffeeLocal.styled'
 
 export default function SingleCaffeeLocal({ data }) {
-  const { description, menuLink, title, image } = data
+  const { description, homeMenuLink, title, image } = data
 
   const localImage = getImage(image.localFile.childImageSharp.gatsbyImageData)
-
   return (
     <SingleCaffeeWrapper>
       <SingleOverlay>
-        <Link to={menuLink}>
+        <Link to={homeMenuLink.uri}>
           <h3>{title}</h3>
           <div dangerouslySetInnerHTML={{ __html: description }} className='cafe-content' />
         </Link>

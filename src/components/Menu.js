@@ -6,7 +6,6 @@ import { MenuComponent, MenuItemWrapper, MenuWrapper, TitleWrapp, MenuTitle, Men
 
 export default function Menu({ menuData, title, id }) {
 
-  // menuData.map(item => console.log(item))
   return (
     <MenuComponent id={id}>
       <MenuComponentTitle>{title}</MenuComponentTitle>

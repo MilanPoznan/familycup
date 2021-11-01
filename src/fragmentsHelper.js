@@ -18,7 +18,7 @@ export const menuFragments = graphql`
 `
 
 export const flexibleContentFragments = graphql`
-  fragment getFlexibleContent on WpPage_Flexiblecontent {
+  fragment getFlexibleContents on WpPage_Flexiblecontent {
     pageContent {
       ... on WpPage_Flexiblecontent_PageContent_Menu {
             fieldGroupName
@@ -55,8 +55,13 @@ export const flexibleContentFragments = graphql`
         ... on WpPage_Flexiblecontent_PageContent_CaffeePlace {
           title
           description
+          homeMenuLink {
+            ... on WpPage {
+              id
+              uri
+            }
+          }
           fieldGroupName
-          menuLink
           image {
             localFile {
               childImageSharp {

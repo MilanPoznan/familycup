@@ -50,7 +50,62 @@ export const menuPageQuery = graphql`query pageByID($id: String!) {
       name
     }
     flexibleContent {
-      ...getFlexibleContent
+      pageContent {
+      ... on WpPage_Flexiblecontent_PageContent_Menu {
+            fieldGroupName
+            menuTitle
+            previewIcon {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: FULL_WIDTH
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
+            menuLink
+            menuItems {
+              description
+              image {
+                localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: FULL_WIDTH
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+              }
+              price
+              title
+            }
+        }
+        ... on WpPage_Flexiblecontent_PageContent_CaffeePlace {
+          title
+          description
+          homeMenuLink {
+            ... on WpPage {
+              id
+              uri
+            }
+          }
+          fieldGroupName
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FULL_WIDTH
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+          }
+        }
+    }
     }
   }
   allWpMenu {
