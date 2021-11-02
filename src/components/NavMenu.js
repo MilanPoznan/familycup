@@ -11,20 +11,21 @@ export default function NavMenu({ currLangMenu }) {
 
   return (
     <NavMenuWrapper>
-      <NavMenuContainer>
-        <NavigationLogo src={logoSrc} alt="logo" />
-        <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+      {/* <NavMenuContainer> */}
+      <NavigationLogo src={logoSrc} alt="logo" />
+      {/* <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span></span>
           <span></span>
           <span></span>
         </HamburgerButton>
-      </NavMenuContainer>
       <NavigationMenuContainer isOpen={isOpen}>
         {currLangMenu &&
           currLangMenu.map((item, index) => <Link key={index} to={item.url}> {item.label}</Link>
           )}
-        <img src={logoSrc} alt="kafeterija logo" />
-      </NavigationMenuContainer>
+        <img src={logoSrc} alt="kafeterija logo" /> */}
+      {/* </NavigationMenuContainer> */}
+      {/* </NavMenuContainer> */}
+
     </NavMenuWrapper>
   )
 }

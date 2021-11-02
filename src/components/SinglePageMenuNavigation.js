@@ -19,7 +19,6 @@ export default function SinglePageMenuNavigation({ data }) {
           </SingleMenuItem>
         )
       })}
-      <ArrowDown />
 
     </MenuItemWrapper>
   )

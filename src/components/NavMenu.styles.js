@@ -1,22 +1,23 @@
 import styled, { css } from 'styled-components'
 
 export const NavMenuWrapper = styled.div`
-  position: fixed;
+  position: relative;
   min-width: 100%;
   overflow: hidden;
   left: 0;
   top: 0;
-  height: 60px;
-  border-bottom: 1px solid grey;
+  /* height: 60px; */
+  /* border-bottom: 1px solid grey; */
   display: flex;
+  justify-content: center;
   padding: 16px;
   background-color: #fff;
   z-index: 100;
   @media  (min-width: 768px) {
     height: 80px;
     img {
-      width: 60px;
-      height: 60px;
+      width: 160px;
+      height: 160px;
     }
   }
 `
@@ -28,8 +29,8 @@ export const NavMenuContainer = styled.div`
   align-items: center;
 `
 export const NavigationLogo = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
 `
 
 export const HamburgerButton = styled.section`
