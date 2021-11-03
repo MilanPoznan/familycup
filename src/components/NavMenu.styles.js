@@ -14,7 +14,7 @@ export const NavMenuWrapper = styled.div`
   background-color: #fff;
   z-index: 100;
   @media  (min-width: 768px) {
-    height: 80px;
+    /* height: 80px; */
     img {
       width: 160px;
       height: 160px;
