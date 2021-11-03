@@ -6,6 +6,11 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+ @font-face {
+  font-family: 'Gotham';
+  src: url('./Gotham/Gotham-Book-Regular.otf') format('truetype');
+}
+ 
  html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
@@ -37,7 +42,7 @@ h1 {
   color: #314161;
 }
 h2 {
-	font-family: Arial;
+	font-family: 'Gotham';
   font-size: 26px;
   font-weight: bold;
   font-stretch: normal;

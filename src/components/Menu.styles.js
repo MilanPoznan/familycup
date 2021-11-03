@@ -18,7 +18,7 @@ export const MenuComponentTitle = styled.h2`
   width: 80%;
   margin: 40px auto;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
 `
 
 export const MenuItemWrapper = styled.div`
@@ -51,7 +51,8 @@ export const TitleWrapp = styled.div`
 `
 
 export const MenuTitle = styled.h3`
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+
   margin: 0 10px;
   font-size: 18px;
 
@@ -60,7 +61,8 @@ export const MenuTitle = styled.h3`
 export const MenuPrice = styled.p`
   margin: 0;
   font-size: 18px !important;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+
 `
 
 export const MenuDesc = styled.div`
@@ -70,5 +72,6 @@ export const MenuDesc = styled.div`
   text-align: center;
   line-height: 18px;
   letter-spacing: .3px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+
 `
