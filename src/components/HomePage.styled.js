@@ -2,8 +2,8 @@
 import styled, { keyframes } from 'styled-components'
 
 export const HomePgeWrapper = styled.div`
-  padding: 40px 0;
-  @media  (min-width: 768px) {  
+  padding: 0px;
+  @media  (min-width: 1200px) {  
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -23,19 +23,39 @@ const showLogo = keyframes`
 `
 
 export const SingleLogoWrapper = styled.div`
-  width: 60%;
-  height: auto;
-  margin: 20px auto 40px;
-  animation-name: ${showLogo};
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  width: 100%;
+  height: 60px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #051912;
   img {
-    width: 100%;
-    height: auto;
+    width: 40px;
+    height: 40px;
   }
-  @media  (min-width: 768px) {  
-    width: 40%;
-    margin: 20px auto 0px;
-
+  @media  (min-width: 1200px) {  
+    position: relative;
+    width: 100%;
+    height: 114px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 256px;
+      width: 256px;
+      border-radius: 50%;
+      background: red;
+      top: -80px;
+      background-color: #051912;
+      z-index: 110;
+      opacity: 1;
+    }
+    img {
+      position: relative;
+      width: 126px;
+      height: 126px;
+      top: 28px;
+      z-index: 200;
+    }
   }
 `

@@ -14,7 +14,7 @@ export default function Page({ data }) {
   const { allWpMenu: { nodes }, wpPage: { language, flexibleContent: { pageContent } } } = data
 
   const [currLangMenu, setcurrLangMenu] = useState([])
-
+  console.log(pageContent)
   const prepareDataForMenuNavigation = () => pageContent.map(item => {
     return {
       menuLink: item.menuLink,
@@ -54,6 +54,7 @@ export const menuPageQuery = graphql`query pageByID($id: String!) {
       ... on WpPage_Flexiblecontent_PageContent_Menu {
             fieldGroupName
             menuTitle
+            menuType
             previewIcon {
               localFile {
                 childImageSharp {

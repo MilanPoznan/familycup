@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import WelcomeScreen from "../components/WelcomeScreen"
 import Layout from '../components/Layout'
-import { graphql, navigate } from 'gatsby'
-import HomepageLayout from '../components/HomepageLayout'
+import { graphql } from 'gatsby'
 import SingleCaffeeLocal from '../components/SingleCaffeeLocal'
 import Menu from '../components/Menu'
 
 import { HomePgeWrapper, SingleLogoWrapper } from '../components/HomePage.styled'
-import logoSrc from '../images/familycup.png'
+import logoSrc from '../images/familylogo.png'
 
 
 export default function HomepageTemplate({ data }) {
@@ -33,7 +32,6 @@ export default function HomepageTemplate({ data }) {
           } else if (item.fieldGroupName === 'Page_Flexiblecontent_PageContent_CaffeePlace') {
             return <SingleCaffeeLocal key={index} data={item} />
           }
-
         })}
       </HomePgeWrapper>
     </Layout >

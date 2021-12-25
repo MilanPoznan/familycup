@@ -12,7 +12,7 @@ export default function NavMenu({ currLangMenu }) {
   return (
     <NavMenuWrapper>
       {/* <NavMenuContainer> */}
-      <NavigationLogo src={logoSrc} alt="logo" />
+      {/* <NavigationLogo src={logoSrc} alt="logo" /> */}
       {/* <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span></span>
           <span></span>

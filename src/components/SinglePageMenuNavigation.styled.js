@@ -8,61 +8,83 @@ to {
   opacity: 1;
 }
 `
+export const HeroStyled = styled.div`
+background: #f7ebde;
+`
 
+export const HeroBackground = styled.div`
+  width: 100%;
+  height: 220px;
+  padding-top: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: url(${props => props.bgImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media  (min-width: 1200px) {  
+    height: 560px;
+  }
+`
+export const HeroLogo = styled.img`
+  width: 105px;
+  height: 105px;
+`
+export const HeroTitle = styled.h1`
+  display: none;
+@media  (min-width: 1200px) {  
+  display: flex;
+  font-size: 56px;
+  font-weight: bold;
+  color: #051912;
+}
+
+`
 
 export const MenuItemWrapper = styled.div`
-padding-top: 20px;
-height: auto;
-display: flex;
-flex-flow: row;
-flex-wrap: wrap;
-justify-content: center;
-align-items: flex-start;
-@media  (min-width: 768px) {  
   height: auto;
-  padding-top: 200px;
+  display: flex;
   flex-flow: row;
-}
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: -70px;
+  padding: 0px 16px;
+  @media  (min-width: 1200px) {  
+    height: auto;
+    flex-flow: row;
+    padding: 0px 40px;
+
+  }
 `
 
 export const SingleMenuItem = styled.div`
-width: 30%;
-max-height: 160px;
-display: flex;
-flex-flow: column;
-align-items: center;
-justify-content: center;
-margin: 30px auto;
-.gatsby-image-wrapper {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-bottom: 12px;
-}
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: ${({ theme }) => theme.colors.primary};
-  text-align: center;
-}
-@media  (min-width: 768px) {  
+  width: 46%;
+  height: 100px;
+  /* max-height: 90px; */
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
   .gatsby-image-wrapper {
-    width: 80px;
-  height: 80px;
+    width: 100%;
+    margin-bottom: 12px;
   }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #051912;
+    text-align: center;
   }
-`
-
-export const ArrowDown = styled.div`
-  width: 30px;
-  height: 30px;
-  border-top: 4px solid ${({ theme }) => theme.colors.primaryDark};
-  border-right: 4px solid ${({ theme }) => theme.colors.primaryDark};
-  transform: rotate(135deg);
-  margin: 10px auto 0;
-  animation: ${animatearrow} 2s infinite ease-in-out;
-  @media  (min-width: 768px) {  
-    display: none;
+  @media  (min-width: 1200px) {  
+    width: 210px;
+    height: 130px;
+    /* .gatsby-image-wrapper {
+        width: 80px;
+        height: 80px;
+      } */
   }
 
 `
