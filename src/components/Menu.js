@@ -1,28 +1,43 @@
 import React from 'react'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {
+  MenuComponent,
+  MenuWrapper,
+  MenuComponentTitle
+} from './Menu.styles'
 
+//Menu compoennts
+import CoffeeMenu from './menuComponents/CoffeeMenu'
+import CigaretteComponent from './menuComponents/CigaretteComponent'
+import JuicesComponent from './menuComponents/JuicesComponent'
+import AlcoholComponent from './menuComponents/AlcoholComponent'
+import FoodComponent from './menuComponents/FoodComponent'
+import TeaComponent from './menuComponents/TeaComponent'
 
-import { MenuComponent, MenuItemWrapper, MenuWrapper, TitleWrapp, MenuTitle, MenuPrice, MenuDesc, MenuComponentTitle } from './Menu.styles'
+export default function Menu({ menuData, title, id, menuType }) {
 
-export default function Menu({ menuData, title, id }) {
+  function renderProperMenuFromMenuType(type, menuData) {
+    switch (type) {
+      case 'coffee':
+        return <CoffeeMenu menuData={menuData} />
+      case 'tea':
+        return <TeaComponent menuData={menuData} />
+      case 'cigarette':
+        return <CigaretteComponent menuData={menuData} />
+      case 'juices':
+        return <JuicesComponent menuData={menuData} />
+      case 'alcohol':
+        return <AlcoholComponent menuData={menuData} />
+      case 'food':
+        return <FoodComponent menuData={menuData} />
+      default:
+    }
+  }
 
   return (
-    <MenuComponent id={id}>
+    <MenuComponent id={id} menuType={menuType}>
       <MenuComponentTitle>{title}</MenuComponentTitle>
       <MenuWrapper>
-        {menuData.map((item, index) => {
-          const image = item.image ? getImage(item.image.localFile.childImageSharp.gatsbyImageData) : null
-          return (<MenuItemWrapper key={index}>
-            {image !== null ? <GatsbyImage image={image} alt="menu item" /> : null}
-            <TitleWrapp>
-              <MenuTitle>{item.title}</MenuTitle>
-              <MenuPrice>{item.price}</MenuPrice>
-            </TitleWrapp>
-            <MenuDesc>
-              {item.description}
-            </MenuDesc>
-          </MenuItemWrapper>)
-        })}
+        {renderProperMenuFromMenuType(menuType, menuData)}
       </MenuWrapper>
     </MenuComponent>
   )

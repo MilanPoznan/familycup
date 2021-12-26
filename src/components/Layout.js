@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { GlobalWrapper, HomeWrapper } from './Layout.styles'
+import { GlobalWrapper, HomeWrapper } from './Layout.styled'
 
 import WelcomeScreen from "./WelcomeScreen"
 

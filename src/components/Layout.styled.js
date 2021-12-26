@@ -11,10 +11,10 @@ export const GlobalWrapper = styled.div`
 
 `
 
-
 export const HomeWrapper = styled.div`
   margin: 0 auto;
   padding: 0;
   display: flex;
   flex-flow: column;
 `
+

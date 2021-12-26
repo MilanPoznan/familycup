@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { graphql, navigate } from 'gatsby'
-
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
 import Menu from '../components/Menu'
-
+//Menu compoennts
 import SinglePageMenuNavigation from '../components/SinglePageMenuNavigation'
 
-export default function Page({ data }) {
+
+export default function Page({ data, children }) {
 
   const { allWpMenu: { nodes }, wpPage: { language, flexibleContent: { pageContent } } } = data
 
   const [currLangMenu, setcurrLangMenu] = useState([])
-  console.log(pageContent)
   const prepareDataForMenuNavigation = () => pageContent.map(item => {
     return {
       menuLink: item.menuLink,
@@ -23,6 +21,7 @@ export default function Page({ data }) {
     }
   })
 
+
   useEffect(() => {
     let isSerbian = language.slug === 'sr'
     let getCurrLangMenu = () => isSerbian ? nodes[0].menuItems.nodes : nodes[1].menuItems.nodes
@@ -30,17 +29,23 @@ export default function Page({ data }) {
   }, [])
 
   return (
-    <Layout language={language} currLangMenu={currLangMenu}>
-      <SinglePageMenuNavigation data={prepareDataForMenuNavigation()} />
-      {pageContent.map((item, index) => {
-        if (item.fieldGroupName === "Page_Flexiblecontent_PageContent_Menu") {
-          return <Menu key={index} menuData={item.menuItems} title={item.menuTitle} id={item.menuLink} />
-        }
-      })}
-    </Layout>
+    <>
+      <Layout language={language} currLangMenu={currLangMenu}>
+        <SinglePageMenuNavigation data={prepareDataForMenuNavigation()} />
+        {/* /REnder page contetn */}
+
+        {pageContent.map((item, index) => {
+          if (item.fieldGroupName === "Page_Flexiblecontent_PageContent_Menu") {
+            return <Menu key={index} menuData={item.menuItems} title={item.menuTitle} id={item.menuLink} menuType={item.menuType} >
+              {children}
+            </Menu>
+          }
+        })}
+
+      </Layout>
+    </>
   )
 }
-
 
 export const menuPageQuery = graphql`query pageByID($id: String!) {
   wpPage(id: {eq: $id}) {

@@ -1,17 +1,35 @@
 import styled from "styled-components";
 
+
+function sectionBgColorDepeandsOfType(type) {
+  switch (type) {
+    case 'coffee':
+      return '#f7ebde'
+    case 'tea':
+      return '#d6cac2'
+    case 'cigarette':
+      return '#f7ebde'
+    case 'juices':
+      return '#d6cac2'
+    case 'alcohol':
+      return '#f7ebde'
+    case 'food':
+      return '#134332'
+    default:
+      return '#f7ebde'
+  }
+}
 export const MenuWrapper = styled.div`
-  display: flex;
-  flex-flow: column;
-  @media  (min-width: 768px) {  
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  @media  (min-width: 1200px) {  
+    width: 1140px;
+    margin: 0 auto;
   }
 `
 
 export const MenuComponent = styled.div`
-padding-top: 60px;
+  padding: 0 16px;
+  background-color: ${props => sectionBgColorDepeandsOfType(props.menuType)};
+
 `
 
 export const MenuComponentTitle = styled.h2`
@@ -21,57 +39,58 @@ export const MenuComponentTitle = styled.h2`
   font-family: 'Gotham', Arial, Helvetica, sans-serif;
 `
 
-export const MenuItemWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  margin-bottom: 40px;
-  width: 100%;
-  box-shadow: -1px 9px 21px -5px rgba(0,0,0,0.75);
-  .gatsby-image-wrapper {
-    width: 100%;
-    margin: 0 auto;
-    height: 200px;
-  } 
-@media  (min-width: 768px) {
-  width: 46%;
-  .gatsby-image-wrapper {
-    margin: 0 auto;
-    height: 240px;
-  } 
-  }
-`
 
+export const MenuItemWrapper = styled.div`
+display: flex;
+flex-flow: row;
+flex-wrap: wrap;
+`
 export const TitleWrapp = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 0px 0 0;
+  padding: 10px 0px;
+  @media (min-width: 1200px) {
+    padding: 18px 0px 0px;
+  }
 
 `
 
 export const MenuTitle = styled.h3`
-  font-family: 'Gotham', Arial, Helvetica, sans-serif;
-
-  margin: 0 10px;
-  font-size: 18px;
-
-`
-
-export const MenuPrice = styled.p`
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #051912;
   margin: 0;
-  font-size: 18px !important;
   font-family: 'Gotham', Arial, Helvetica, sans-serif;
 
 `
 
 export const MenuDesc = styled.div`
-  padding: 0 5% 14px;
-  margin-top: 12px;
   font-size: 14px;
-  text-align: center;
-  line-height: 18px;
-  letter-spacing: .3px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #051912;
+  opacity: 0.6;
   font-family: 'Gotham', Arial, Helvetica, sans-serif;
+`
 
+export const ReadMoreText = styled.p`
+  display: inline;
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #134332;
+  cursor: pointer;
 `
