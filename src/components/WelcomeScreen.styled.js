@@ -107,7 +107,7 @@ export const SingleMenuItem = styled(Link)`
   animation-fill-mode: forwards;
   opacity: 0;
   font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   @media (min-width: 768px) {
     font-size: 28px;
   }

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 import Menu from '../components/Menu'
+import Footer from '../components/Footer'
 //Menu compoennts
 import SinglePageMenuNavigation from '../components/SinglePageMenuNavigation'
 
@@ -41,7 +42,7 @@ export default function Page({ data, children }) {
             </Menu>
           }
         })}
-
+        <Footer />
       </Layout>
     </>
   )

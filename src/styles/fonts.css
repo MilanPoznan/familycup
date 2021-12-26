@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "met-black";
+  src: url("./metropolis/Metropolis-Black.otf");
+}
+
+@font-face {
+  font-family: "met-bold";
+  src: url("./metropolis/Metropolis-Bold.otf");
+}
+
+@font-face {
+  font-family: "met-light";
+  src: url("./metropolis/Metropolis-Light.otf");
+}
+@font-face {
+  font-family: "met-medium";
+  src: url("./metropolis/Metropolis-Medium.otf");
+}
+
+@font-face {
+  font-family: "met-regular";
+  src: url("./metropolis/Metropolis-Regular.otf");
+}
+@font-face {
+  font-family: "met-black";
+  src: url("./metropolis/Metropolis-Black.otf");
+}
+@font-face {
+  font-family: "met-semi-bold";
+  src: url("./metropolis/Metropolis-SemiBold.otf");
+}
+
+/* Metropolis-ExtraBold */
+
+/* Metropolis-SemiBold */

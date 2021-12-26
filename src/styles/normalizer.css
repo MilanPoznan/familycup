@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import './fonts.css';
 
  @font-face {
   font-family: 'Gotham';
@@ -31,6 +32,19 @@ body {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+
+h1, h2, h3, h4, h5, h6, p, span, div {
+	font-family: 'met-regular';
+}
+.met-light {
+	font-family: 'met-light';
+}
+.met-medium {
+	font-family: 'met-medium';
+}
+.met-bold {
+	font-family: 'met-bold';
+}
 
 h1 {
 	font-size: 30px;

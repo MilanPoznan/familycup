@@ -19,6 +19,27 @@ function sectionBgColorDepeandsOfType(type) {
       return '#f7ebde'
   }
 }
+
+
+function sectionPadding(type) {
+  switch (type) {
+    case 'coffee':
+      return '120px 0 100px';
+    case 'tea':
+      return '100px 0 80px'
+    case 'cigarette':
+      return '100px 0 40px'
+    case 'juices':
+      return '100px 0 50px'
+    case 'alcohol':
+      return '100px 0 80px'
+    case 'food':
+      return '100px 0 30px'
+    default:
+      return '100px 0'
+  }
+}
+
 export const MenuWrapper = styled.div`
   @media  (min-width: 1200px) {  
     width: 1140px;
@@ -29,14 +50,23 @@ export const MenuWrapper = styled.div`
 export const MenuComponent = styled.div`
   padding: 0 16px;
   background-color: ${props => sectionBgColorDepeandsOfType(props.menuType)};
-
+  @media (min-width: 1200px) {
+    padding: ${props => sectionPadding(props.menuType)};
+  }
 `
 
 export const MenuComponentTitle = styled.h2`
   width: 80%;
-  margin: 40px auto;
+  margin: 0px auto;
   text-align: center;
-  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-family: 'met-semi-bold';
+  color: ${props => props.isWhite ? '#FFF' : '#051912'};
+  @media (min-width: 1200px) {
+    width: 40%;
+    text-align: left;
+    margin: 0 0 40px;
+
+  }
 `
 
 
@@ -44,6 +74,11 @@ export const MenuItemWrapper = styled.div`
 display: flex;
 flex-flow: row;
 flex-wrap: wrap;
+justify-content: space-between;
+@media (min-width: 1200px) {
+  justify-content: flex-start;
+
+}
 `
 export const TitleWrapp = styled.div`
   display: flex;
@@ -64,7 +99,8 @@ export const MenuTitle = styled.h3`
   text-align: left;
   color: #051912;
   margin: 0;
-  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-family: 'met-semi-bold';
+
 
 `
 
@@ -78,7 +114,7 @@ export const MenuDesc = styled.div`
   text-align: left;
   color: #051912;
   opacity: 0.6;
-  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+	font-family: 'met-light';
 `
 
 export const ReadMoreText = styled.p`
@@ -91,6 +127,6 @@ export const ReadMoreText = styled.p`
   line-height: 1.5;
   letter-spacing: normal;
   text-align: left;
-  color: #134332;
+  color: ${props => props.isWhite ? '#fff' : '#134332'};
   cursor: pointer;
 `

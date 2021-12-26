@@ -54,6 +54,8 @@ export const MenuItemWrapper = styled.div`
     height: auto;
     flex-flow: row;
     padding: 0px 40px;
+    max-width: 1440px;
+    margin: -90px auto 0;
 
   }
 `
@@ -77,10 +79,11 @@ export const SingleMenuItem = styled.div`
     font-size: 16px;
     color: #051912;
     text-align: center;
+    font-family: 'met-semi-bold';
   }
   @media  (min-width: 1200px) {  
     width: 210px;
-    height: 130px;
+    height: 160px;
     /* .gatsby-image-wrapper {
         width: 80px;
         height: 80px;

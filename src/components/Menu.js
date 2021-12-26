@@ -35,8 +35,8 @@ export default function Menu({ menuData, title, id, menuType }) {
 
   return (
     <MenuComponent id={id} menuType={menuType}>
-      <MenuComponentTitle>{title}</MenuComponentTitle>
       <MenuWrapper>
+        <MenuComponentTitle isWhite={menuType === 'food'}>{title}</MenuComponentTitle>
         {renderProperMenuFromMenuType(menuType, menuData)}
       </MenuWrapper>
     </MenuComponent>

@@ -11,7 +11,7 @@ import {
 
 import defLogo from '../../images/hero-photo.png'
 
-const LongDescription = ({ text, onClickFunc }) => <div>{text}<ReadMoreText onClick={onClickFunc}>vise</ReadMoreText></div>
+const LongDescription = ({ text, onClickFunc }) => <div>{text}...<ReadMoreText onClick={onClickFunc}>vise</ReadMoreText></div>
 
 export default function CoffeeMenu({ menuData }) {
   return (
@@ -26,7 +26,7 @@ export default function CoffeeMenu({ menuData }) {
             </TitleWrapp>
             <MenuDesc>
               {item.description && item.description.length > 54
-                ? <LongDescription text={item.description.split(' ').filter((item, index) => index < 6).join(' ')} />
+                ? <LongDescription text={item.description.substring(0, 45)} />
                 : item.description
               }
             </MenuDesc>

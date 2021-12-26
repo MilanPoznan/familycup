@@ -27,7 +27,6 @@ export const SingleCaffeeWrapper = styled.div`
   margin: 0 auto;
   height: calc(25vh - 15px);
   overflow: hidden;
-  font-family: 'Gotham';
   &:hover {
     .gatsby-image-wrapper {
       transform: scale(1.1);
