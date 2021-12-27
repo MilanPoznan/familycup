@@ -110,7 +110,7 @@ export const SingleLokacijeWrapper = styled.div`
   margin-bottom: 40px;
   @media (min-width: 1200px) {
     margin-right: 36px;
-    min-width: 156px;
+    min-width: 166px;
 
   }
 `

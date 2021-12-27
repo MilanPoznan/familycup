@@ -5,6 +5,8 @@ import Layout from '../components/Layout'
 
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
+
+import SingleItemModal from '../components/SingleItemModal'
 //Menu compoennts
 import SinglePageMenuNavigation from '../components/SinglePageMenuNavigation'
 

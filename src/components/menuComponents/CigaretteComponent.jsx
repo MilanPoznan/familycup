@@ -9,7 +9,7 @@ import {
   MenuItemWrapper
 } from '../Menu.styles'
 
-import defLogo from '../../images/hero-photo.png'
+import defLogo from '../../images/cigar.jpg'
 
 const LongDescription = ({ text, onClickFunc }) => <div>{text}...<ReadMoreText onClick={onClickFunc}>vise</ReadMoreText></div>
 

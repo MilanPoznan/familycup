@@ -13,6 +13,7 @@ export const CoffeeItemWrapper = styled.div`
   .gatsby-image-wrapper, .def-img {
       height: 28vh;
       width: 100%;
+      object-fit: cover;
   }
   @media (min-width: 1200px) {
     width: ${props => props.isWider ? '362px' : '210px'};
@@ -34,6 +35,8 @@ display: flex;
   .gatsby-image-wrapper, .def-img {
     height: 28vh;
     width: 100%;
+    object-fit: cover;
+
   }
   @media (min-width: 1200px) {
     width: ${props => props.isWider ? '362px' : '210px'};
@@ -64,6 +67,7 @@ export const JuiceItemWrapper = styled.div`
   .gatsby-image-wrapper, .def-img {
     height: 28vh;
     width: 100%;
+    object-fit: cover;
   }
   @media (min-width: 1200px) {
     width: 208px;
@@ -110,6 +114,8 @@ export const CigaretteItemWrapper = styled.div`
   .gatsby-image-wrapper, .def-img {
     height: 28vh;
     width: 100%;
+    object-fit: cover;
+
   }
   @media (min-width: 1200px) {
     width: ${props => props.isWider ? '267px' : '210px'};

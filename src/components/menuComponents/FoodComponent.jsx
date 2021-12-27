@@ -11,7 +11,7 @@ import {
   MenuItemWrapper
 } from '../Menu.styles'
 
-import defLogo from '../../images/hero-photo.png'
+import defLogo from '../../images/food.jpg'
 
 const LongDescription = ({ text, onClickFunc }) => <div>{text}...<ReadMoreText isWhite={true} onClick={onClickFunc}>Opširnije</ReadMoreText></div>
 
