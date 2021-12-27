@@ -11,13 +11,14 @@ import {
 
 import defLogo from '../../images/cigar.jpg'
 
-const LongDescription = ({ text, onClickFunc }) => <div>{text}...<ReadMoreText onClick={onClickFunc}>vise</ReadMoreText></div>
 
-export default function CigaretteComponent({ menuData }) {
+export default function CigaretteComponent({ menuData, setShowModalCallback, setModalPropsCallback }) {
   return (
     <MenuItemWrapper>
       {menuData.map((item, index) => {
         const image = item.image ? getImage(item.image.localFile.childImageSharp.gatsbyImageData) : null
+        const text = item.description && item.description.substring(0, 45)
+
         return (
           <CigaretteItemWrapper key={index} isWider={index < 4}>
             {image !== null ? <GatsbyImage image={image} alt="menu item" /> : <img className="def-img" src={defLogo} />}
@@ -26,7 +27,13 @@ export default function CigaretteComponent({ menuData }) {
             </TitleWrapp>
             <MenuDesc>
               {item.description && item.description.length > 54
-                ? <LongDescription text={item.description.substring(0, 45)} />
+                ? <div> {text}...
+                  <ReadMoreText
+                    onClick={() => {
+                      setShowModalCallback()
+                      setModalPropsCallback(item.title, item.description, image !== null ? image : defLogo)
+                    }}
+                  >opširnije</ReadMoreText></div>
                 : item.description
               }
             </MenuDesc>

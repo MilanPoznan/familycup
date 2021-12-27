@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+
 import {
   MenuComponent,
   MenuWrapper,
@@ -6,6 +7,7 @@ import {
 } from './Menu.styles'
 
 import SingleItemModal from './SingleItemModal'
+
 //Menu compoennts
 import CoffeeMenu from './menuComponents/CoffeeMenu'
 import CigaretteComponent from './menuComponents/CigaretteComponent'
@@ -15,6 +17,7 @@ import FoodComponent from './menuComponents/FoodComponent'
 import TeaComponent from './menuComponents/TeaComponent'
 
 export default function Menu({ menuData, title, id, menuType }) {
+
   const [showModal, setShowModal] = useState(false)
   const [modalProps, setModalProps] = useState([])
 
@@ -27,6 +30,13 @@ export default function Menu({ menuData, title, id, menuType }) {
     setClearModalProps()
     setShowModalCallback()
   }
+
+  useEffect(() => {
+    showModal
+      ? document.body.classList.add('no-scroll')
+      : document.body.classList.remove('no-scroll')
+  }, [showModal])
+
   function renderProperMenuFromMenuType(type, menuData) {
     switch (type) {
       case 'coffee':
@@ -37,15 +47,36 @@ export default function Menu({ menuData, title, id, menuType }) {
           setClearModalProps={setClearModalProps}
         />
       case 'tea':
-        return <TeaComponent menuData={menuData} />
+        return <TeaComponent
+          menuData={menuData}
+          setShowModalCallback={setShowModalCallback}
+          setModalPropsCallback={setModalPropsCallback}
+          setClearModalProps={setClearModalProps}
+        />
       case 'cigarette':
-        return <CigaretteComponent menuData={menuData} />
+        return <CigaretteComponent menuData={menuData}
+          setShowModalCallback={setShowModalCallback}
+          setModalPropsCallback={setModalPropsCallback}
+          setClearModalProps={setClearModalProps}
+        />
       case 'juices':
-        return <JuicesComponent menuData={menuData} />
+        return <JuicesComponent menuData={menuData}
+          setShowModalCallback={setShowModalCallback}
+          setModalPropsCallback={setModalPropsCallback}
+          setClearModalProps={setClearModalProps}
+        />
       case 'alcohol':
-        return <AlcoholComponent menuData={menuData} />
+        return <AlcoholComponent menuData={menuData}
+          setShowModalCallback={setShowModalCallback}
+          setModalPropsCallback={setModalPropsCallback}
+          setClearModalProps={setClearModalProps}
+        />
       case 'food':
-        return <FoodComponent menuData={menuData} />
+        return <FoodComponent menuData={menuData}
+          setShowModalCallback={setShowModalCallback}
+          setModalPropsCallback={setModalPropsCallback}
+          setClearModalProps={setClearModalProps}
+        />
       default:
     }
   }

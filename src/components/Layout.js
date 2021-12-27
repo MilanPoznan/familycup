@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { GlobalWrapper, HomeWrapper } from './Layout.styled'
 
 import WelcomeScreen from "./WelcomeScreen"

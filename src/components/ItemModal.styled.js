@@ -19,6 +19,7 @@ export const ItemModalWrapper = styled.div`
   background: #fff;
   opacity: 1;
   position: relative;
+  max-width: 460px;
   h1 {
     text-align: center;
     width: 80%;
@@ -28,6 +29,10 @@ export const ItemModalWrapper = styled.div`
     text-align: center;
     width: 80%;
     margin: 0 auto 20px;
+    line-height: 1.8;
+  }
+  .gatsby-image-wrapper {
+    max-height: 400px;
   }
 `
 

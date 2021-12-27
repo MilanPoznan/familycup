@@ -11,7 +11,9 @@
   font-family: 'Gotham';
   src: url('./Gotham/Gotham-Book-Regular.otf') format('truetype');
 }
- 
+.no-scroll { 
+  overflow: hidden;
+}
  html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
