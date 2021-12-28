@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 export const menuFragments = graphql`
   fragment getMenus on WpMenuConnection  {
     nodes {
-      locations
       menuItems {
         nodes {
           label
