@@ -41,7 +41,9 @@ function sectionPadding(type) {
 }
 
 export const MenuWrapper = styled.div`
+  padding-top: 40px;
   @media  (min-width: 1200px) {  
+    padding-top: 0px;
     width: 1140px;
     margin: 0 auto;
   }
@@ -57,7 +59,7 @@ export const MenuComponent = styled.div`
 
 export const MenuComponentTitle = styled.h2`
   width: 80%;
-  margin: 0px auto;
+  margin: 0px auto 30px;
   text-align: center;
   font-family: 'met-semi-bold';
   color: ${props => props.isWhite ? '#FFF' : '#051912'};

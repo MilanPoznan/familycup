@@ -22,7 +22,7 @@ export default function AlcoholComponent({ menuData, setShowModalCallback, setMo
 
         return (
           <CoffeeItemWrapper key={index} isWider={index > 4 && index < 8}>
-            {image !== null ? <GatsbyImage image={image} alt="menu item" /> : <img className="def-img" src={defLogo} />}
+            {image !== null ? <GatsbyImage image={image} alt="menu item" /> : <img className="def-img" src={defLogo} loading="lazy" />}
             <TitleWrapp>
               <MenuTitle>{item.title}</MenuTitle>
             </TitleWrapp>

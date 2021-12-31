@@ -48,7 +48,7 @@ export default function Footer() {
         <LokacijeWrapper>
           <LokacijeString>Lokacije</LokacijeString>
 
-          {lokacijeData.map(item => <SingleLokacijeWrapper>
+          {lokacijeData.map(item => <SingleLokacijeWrapper key={item.title}>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
           </SingleLokacijeWrapper>)}

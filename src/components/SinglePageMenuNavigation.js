@@ -15,10 +15,10 @@ export default function SinglePageMenuNavigation({ data }) {
         </HeroTitle>
       </HeroBackground>
       <MenuItemWrapper>
-        {data.map(item => {
+        {data.map((item, index) => {
           let image = item.menuIcon && getImage(item.menuIcon.localFile.childImageSharp.gatsbyImageData)
           return (
-            <SingleMenuItem>
+            <SingleMenuItem key={index}>
               {image && <GatsbyImage image={image} alt="menu item" />}
               <a href={`#${item.menuLink}`}>
                 {item.menuTitle}

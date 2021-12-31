@@ -23,7 +23,7 @@ export default function HomepageTemplate({ data }) {
   return (
     <Layout hasHeader={false}>
       <SingleLogoWrapper>
-        <img src={logoSrc} logo="kafeterija logo" />
+        <img src={logoSrc} logo="kafeterija logo" loading="lazy" />
       </SingleLogoWrapper>
       <HomePgeWrapper>
         {pageContent.map((item, index) => {
