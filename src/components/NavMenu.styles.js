@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const NavMenuWrapper = styled.div`
   position: fixed;
   min-width: 100%;
-  overflow: hidden;
+  /* overflow: ${(props) => props.isMenuOpen ? 'inherit' : 'hidden'}; */
   left: 0;
   top: 0;
   display: flex;
@@ -13,7 +13,6 @@ export const NavMenuWrapper = styled.div`
   z-index: 100;
   transition: transform .4s ease;
   transform: ${(props) => props.isHidden ? 'translateY(-100%)' : 'translateY(0%)'};
-  /* background: ${(props) => props.isHidden ? 'red' : 'green'}; */
   @media  (min-width: 1200px) {
     display: none;
   }
@@ -28,6 +27,8 @@ export const NavMenuContainer = styled.div`
 export const NavigationLogo = styled.img`
   width: auto;
   height: 50px;
+  opacity: ${props => props.isMenuOpen ? '0' : '1'};
+  transition: 0.3s;
 `
 
 export const HamburgerButton = styled.section`
@@ -91,7 +92,7 @@ export const NavigationMenuContainer = styled.div`
   top: 60px;
   left: 100%;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 60px);
   padding-top: 20px;
   background-color: white;
   display: flex;

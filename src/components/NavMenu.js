@@ -23,9 +23,9 @@ export default function NavMenu({ currLangMenu }) {
 
 
   return (
-    <NavMenuWrapper isHidden={isHidden}>
+    <NavMenuWrapper isHidden={isHidden} isMenuOpen={isOpen}>
       <NavMenuContainer>
-        <NavigationLogo src={logoSrc} alt="logo" />
+        <NavigationLogo src={logoSrc} alt="logo" isMenuOpen={isOpen} />
         <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span></span>
           <span></span>
