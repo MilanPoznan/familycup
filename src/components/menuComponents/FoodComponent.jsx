@@ -24,26 +24,26 @@ export default function FoodComponent({ menuData, setShowModalCallback, setModal
         const image = item.image ? getImage(item.image.localFile.childImageSharp.gatsbyImageData) : null
         const text = item.description && item.description.substring(0, 45)
 
-        // return (
-        //   <CoffeeItemWrapper key={index} isWider={true}>
-        //     {image !== null ? <GatsbyImage image={image} alt="menu item" /> : <img className="def-img" src={defLogo} />}
-        //     <TitleWrapp>
-        //       <FoodMenuTitle>{item.title}</FoodMenuTitle>
-        //     </TitleWrapp>
-        //     <FoodDesc>
-        //       {item.description && item.description.length > 84
-        //         ? <div> {text}...
-        //           <ReadMoreText
-        //             isWhite={true}
-        //             onClick={() => {
-        //               setShowModalCallback()
-        //               setModalPropsCallback(item.title, item.description, image !== null ? image : defLogo)
-        //             }}
-        //           >opširnije</ReadMoreText></div>
-        //         : item.description
-        //       }
-        //     </FoodDesc>
-        //   </CoffeeItemWrapper>)
+        return (
+          <CoffeeItemWrapper key={index} isWider={true}>
+            {image !== null ? <GatsbyImage image={image} alt="menu item" /> : <img className="def-img" src={defLogo} />}
+            <TitleWrapp>
+              <FoodMenuTitle>{item.title}</FoodMenuTitle>
+            </TitleWrapp>
+            <FoodDesc>
+              {item.description && item.description.length > 84
+                ? <div> {text}...
+                  <ReadMoreText
+                    isWhite={true}
+                    onClick={() => {
+                      setShowModalCallback()
+                      setModalPropsCallback(item.title, item.description, image !== null ? image : defLogo)
+                    }}
+                  >opširnije</ReadMoreText></div>
+                : item.description
+              }
+            </FoodDesc>
+          </CoffeeItemWrapper>)
       })}
     </MenuItemWrapper>
   )
