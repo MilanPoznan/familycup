@@ -5,14 +5,14 @@ module.exports = {
     title: `Family cup`,
     description: `Family cup desc.`,
     author: `MIlan Poznan`,
-    backendUrl: process.env.GATSBY_WP_URL || 'https://admin.familycup-kafeterija.rs/',
+    backendUrl: 'https://admin.familycup-kafeterija.rs/',
   },
   plugins: [
     {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: `${process.env.GATSBY_WP_URL}/graphql`
+        url: `https://admin.familycup-kafeterija.rs/graphql`
       },
     },
     {
