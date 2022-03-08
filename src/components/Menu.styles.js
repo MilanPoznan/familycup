@@ -61,9 +61,9 @@ export const MenuComponent = styled.div`
   &:after {
     content: '';
     position: absolute;
-    height: 1px;
-    width: 90%;
-    left: 5%;
+    height: 2px;
+    width: 100%;
+    left: 0;
     background: #f7ebde;
     bottom: 0;
   }
