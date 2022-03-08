@@ -86,7 +86,7 @@ export default function Menu({ menuData, title, id, menuType }) {
       {showModal && <SingleItemModal title={modalProps[0]} description={modalProps[1]} image={modalProps[2]} closeMOdalAndClearState={closeMOdalAndClearState} />}
 
       <MenuWrapper>
-        <MenuComponentTitle isWhite={menuType === 'food'}>{title}</MenuComponentTitle>
+        <MenuComponentTitle isWhite={true}>{title}</MenuComponentTitle>
         {renderProperMenuFromMenuType(menuType, menuData)}
       </MenuWrapper>
     </MenuComponent>

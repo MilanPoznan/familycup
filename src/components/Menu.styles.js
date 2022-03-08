@@ -4,15 +4,20 @@ import styled from "styled-components";
 function sectionBgColorDepeandsOfType(type) {
   switch (type) {
     case 'coffee':
-      return '#f7ebde'
+      // return '#f7ebde'
+      return '#134332'
+
     case 'tea':
-      return '#d6cac2'
+      return '#134332'
+    // return '#d6cac2'
     case 'cigarette':
-      return '#f7ebde'
+      return '#134332'
+    // return '#f7ebde'
     case 'juices':
-      return '#d6cac2'
+      return '#134332'
+    // return '#d6cac2'
     case 'alcohol':
-      return '#f7ebde'
+      return '#134332'
     case 'food':
       return '#134332'
     default:
@@ -50,8 +55,19 @@ export const MenuWrapper = styled.div`
 `
 
 export const MenuComponent = styled.div`
+  position: relative;
   padding: 0 16px;
   background-color: ${props => sectionBgColorDepeandsOfType(props.menuType)};
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 90%;
+    left: 5%;
+    background: #f7ebde;
+    bottom: 0;
+  }
+
   @media (min-width: 1200px) {
     padding: ${props => sectionPadding(props.menuType)};
   }
@@ -99,9 +115,11 @@ export const MenuTitle = styled.h3`
   line-height: 1.5;
   letter-spacing: normal;
   text-align: left;
-  color: #051912;
   margin: 0;
   font-family: 'met-semi-bold';
+  color: #e3e0dd;
+
+
 
 
 `
@@ -114,7 +132,9 @@ export const MenuDesc = styled.div`
   line-height: 1.29;
   letter-spacing: normal;
   text-align: left;
-  color: #051912;
+  /* color: #051912; */
+  color: #e3e0dd;
+
   opacity: 0.6;
 	font-family: 'met-light';
 `

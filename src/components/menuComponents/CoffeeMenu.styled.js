@@ -71,7 +71,7 @@ export const JuiceItemWrapper = styled.div`
   }
   @media (min-width: 1200px) {
     width: 208px;
-    height: 146px;
+    /* height: 146px; */
     margin-right: 20px;
     .gatsby-image-wrapper, .def-img {
       width: 210px;
